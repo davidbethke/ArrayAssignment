@@ -13,7 +13,7 @@ TEST(sample_test_case, sample_test)
 int main(int argc, char** argv) 
 { 
 	::testing::GTEST_FLAG(print_time) = true;
-	//::testing::GTEST_FLAG(output) = "xml:C:\\Program Files\\Jenkins\\jobs\\IntegerSetUnitTests\\workspace\\test_detail.xml";
+	::testing::GTEST_FLAG(output) = "xml:C:\\Program Files\\Jenkins\\jobs\\GridTest\\workspace\\test_detail.xml";
 		
 	testing::InitGoogleTest(&argc, argv); 
 	RUN_ALL_TESTS(); 
