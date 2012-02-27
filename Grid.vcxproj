@@ -82,14 +82,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayClass\Array.h" />
-    <ClInclude Include="ArrayTest.h" />
+    <ClInclude Include="ArrayTest.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="GridTest.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArrayClass\Array.cpp" />
-    <ClCompile Include="ArrayTest.cpp" />
+    <ClCompile Include="ArrayTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="GridApp.cpp" />
+    <ClCompile Include="GridTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

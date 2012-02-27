@@ -30,22 +30,34 @@
     <ClInclude Include="ArrayClass\Array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ArrayTest.h">
+    <ClInclude Include="Grid.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="GridTest.h">
+      <Filter>Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ArrayClass\Array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ArrayTest.cpp">
+    <ClCompile Include="GridApp.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="GridTest.cpp">
+      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
