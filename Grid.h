@@ -5,7 +5,7 @@
 class Grid
 	
 {
-	//friend std::ostream& operator<<(std::ostream&,const Grid&);
+	friend std::ostream& operator<<(std::ostream&,const Grid&);
 public:
 	Grid(int=10,int=10);
 	~Grid(void);

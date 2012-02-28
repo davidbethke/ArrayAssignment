@@ -1,5 +1,5 @@
 #include "Grid.h"
-
+#include "GridHelper.h"
 
 
 Grid::Grid(int r,int c):nRows(r),nCols(c)

@@ -2,7 +2,7 @@
 #define GRID_HELPER_H
 #include <iostream>
 class Grid;
-ostream& operator<<(ostream&,const Grid&);
+std::ostream& operator<<(std::ostream&,const Grid&);
 
 
 #endif //GRID_HELPER_H

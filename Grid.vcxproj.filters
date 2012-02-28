@@ -39,6 +39,9 @@
     <ClInclude Include="GridTest.h">
       <Filter>Test</Filter>
     </ClInclude>
+    <ClInclude Include="GridHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -58,6 +61,9 @@
     </ClCompile>
     <ClCompile Include="GridTest.cpp">
       <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="GridHelper.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include "GridTest.h"
-
+#include <string>
 
 GridTest::GridTest(void):myGrid(),myGridVals(5,5),myGridConst()
 {
@@ -11,6 +11,11 @@ GridTest::GridTest(void):myGrid(),myGridVals(5,5),myGridConst()
 
 GridTest::~GridTest(void)
 {
+}
+void makeOutput(string& s)
+{
+	s="0 0 0 0 0 \n0 1 2 3 4 \n0 2 4 6 8 \n0 3 6 9 12 \n0 4 8 12 16 \n";
+
 }
 TEST_F(GridTest,getSize)
 {
@@ -123,4 +128,11 @@ TEST_F(GridTest, assignOp)
 	EXPECT_EQ(10,myGridVals.getCols())<<"Cols after assign FAIL";
 	cout << myGridVals[4];
 	EXPECT_EQ("0 0 0 0 0 0 0 0 0 0 ",oss.str());
+}
+TEST_F(GridTest, gridPrint)
+{
+	std::cout.rdbuf(oss.rdbuf());
+	cout << myGridVals;
+	EXPECT_EQ(gridOutput, oss.str())<< "mismatch grid output FAIL";
+
 }
