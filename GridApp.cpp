@@ -38,6 +38,7 @@ int main(int argc, char** argv)
 #ifdef NDEBUG // Release Version
 	Grid myGrid(5,5),myDefaultGrid;
 	Grid myOtherGrid(myGrid);
+	Grid const myConstGrid;
 	//print rows cols
 	cout <<"MyGrid"<<endl;
 	cout <<"rows:"<<myGrid.getRows()<<",cols:"<<myGrid.getCols()<<endl;
@@ -45,10 +46,14 @@ int main(int argc, char** argv)
 	cout <<"rows:"<<myDefaultGrid.getRows()<<",cols:"<<myDefaultGrid.getCols()<<endl;
 	cout <<"MyOtherGrid"<<endl;
 	cout <<"rows:"<<myOtherGrid.getRows()<<",cols:"<<myOtherGrid.getCols()<<endl;
+	cout <<"MyConstGrid"<<endl;
+	cout <<"rows:"<<myConstGrid.getRows()<<",cols:"<<myConstGrid.getCols()<<endl;
 	// init
 	initMyGrid(myGrid,55);
 	initMyGrid(myDefaultGrid,110);
 	initMyGrid(myOtherGrid,44);
+	//init of const fails
+	// initMyGrid(myConstGrid,99); // fails as expected
 	//print out
 	cout << "MyGrid"<<endl;
 	cout << myGrid;
@@ -59,13 +64,16 @@ int main(int argc, char** argv)
 	cout << "MyOtherGrid"<<endl;
 	cout << myOtherGrid;
 	cout <<endl;
+	cout << "MyConstGrid"<<endl;
+	cout << myConstGrid;
+	cout <<endl;
 	// assign myGrid to myOtherGrid, print
 	myOtherGrid=myGrid;
 	cout << "MyOtherGrid"<<endl;
 	cout << myOtherGrid;
 	cout <<endl;
-	// assign myDefaultGrid to myGrid, print
-	myGrid=myDefaultGrid;
+	// assign myConstGrid to myGrid, print
+	myGrid=myConstGrid;
 	cout << "MyGrid"<<endl;
 	cout << myGrid;
 	cout <<endl;
