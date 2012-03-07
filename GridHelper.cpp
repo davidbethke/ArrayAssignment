@@ -4,6 +4,6 @@ using namespace std;
 ostream& operator<<(ostream& os, const Grid& g)
 {
 	for(int i=0; i<g.nRows;++i)
-		cout << g.myGrid[i]<<endl;
+		os << g.myGrid[i]<<endl;
 	return os;
 }

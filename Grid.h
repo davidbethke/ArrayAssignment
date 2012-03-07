@@ -22,7 +22,7 @@ private:
 	bool inBounds(int) const;
 
 };
-//TODO operator<<
+//DONE operator<<
 /*
 std::ostream& operator<<(std::ostream& os, const Grid& g)
 {
