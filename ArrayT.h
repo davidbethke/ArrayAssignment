@@ -14,7 +14,7 @@ public:
 	ArrayT(const ArrayT<T> &);
 	~ArrayT(void);
 	int getSize() const;
-	const ArrayT& operator=(const ArrayT<T>&);
+	const ArrayT<T>& operator=(const ArrayT<T>&);
 	bool operator==(const ArrayT<T> & ) const;
 	bool operator!=(const ArrayT<T>& ) const;
 	T& operator[](int);
@@ -67,11 +67,8 @@ int ArrayT<T>::getSize() const
    return size; // number of elements in Array
 } // end function getSize
 
-// overloaded assignment operator;
-// const return avoids: ( a1 = a2 ) = a3
-
 template< typename T>
-const ArrayT<T> & ArrayT<T>::operator=(const Array<T> & right)
+const ArrayT<T>& ArrayT<T>::operator=(const ArrayT<T>&right)
 {
 	if(&right !=this)  //self assign
 	{
@@ -89,12 +86,12 @@ const ArrayT<T> & ArrayT<T>::operator=(const Array<T> & right)
 }
 
 template< typename T>
-bool ArrayT<T>::operator==(const Array<T> & right) const
+bool ArrayT<T>::operator==(const ArrayT<T> & right) const
 {
 	if(size !=right.size)
 		return false;
 	for(int i=0; i< size; ++i)
-		if(ptr[i] != right.ptr[i]
+		if(ptr[i] != right.ptr[i])
 		return false;
 	return true;
 }
@@ -105,6 +102,18 @@ T& ArrayT<T>::operator[](int subscript)
 		throw out_of_range("Subscript out of range");
 	return ptr[subscript];
 }
+template< typename T>
+T ArrayT<T>::operator[](int subscript) const
+{
+	if(subscript<0 || subscript >=size)
+		throw out_of_range("Subscript out of range");
+	return ptr[subscript];
 }
+template< typename T>
+bool ArrayT<T>::operator!=(const ArrayT<T>&) const
+{
+	return !(*this == right);
+}
+
 
 #endif //ARRAYT_H
