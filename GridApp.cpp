@@ -5,7 +5,7 @@
 // Ive included a debug and release version
 // #define _DEBUG  or #define NDEBUG
 // I've been using unit Tests w/ googletest unit test framework
-// I've included those *Test files based on a previous comment on assignment3
+// I've included those *Test files in my zip file based on a previous comment on assignment3
 // Ill omit those in the future, if you'd like
 // Should all work
 #include "stdafx.h"
