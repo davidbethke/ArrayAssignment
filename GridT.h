@@ -13,6 +13,7 @@ public:
 	int getCols() const;
 	ArrayT<T>& operator[](int);
 	const ArrayT<T>& operator[](int) const;
+	void print(std::ostream&) const;
 private:
 	ArrayT<T> * myGrid;
 	int nRows;
@@ -87,6 +88,11 @@ bool GridT<T>::inBounds( int i) const
 {
 	return (i>=0&&i<nRows);
 }
-
+template< typename T>
+void GridT<T>::print(std::ostream& os) const
+{
+	for(int i=0; i<nRows;++i)
+		os << myGrid[i] <<endl;
+}
 
 #endif //GRIDT_H

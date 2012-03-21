@@ -51,6 +51,9 @@
     <ClInclude Include="GridT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GridTHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GridT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridTHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
