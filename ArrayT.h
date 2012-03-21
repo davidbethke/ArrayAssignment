@@ -19,8 +19,8 @@ public:
 	bool operator!=(const ArrayT<T>& ) const;
 	T& operator[](int);
 	T operator[](int) const;
-	void print() const;
-	void input();
+	void print(std::ostream&) const;
+	void input(std::istream&);
 private:
 	int size;
 	T  *ptr;
@@ -114,6 +114,19 @@ bool ArrayT<T>::operator!=(const ArrayT<T>&) const
 {
 	return !(*this == right);
 }
+template< typename T>
+void ArrayT<T>::print(std::ostream& os) const
+{
+	for(int i=0; i<size;++i)
+		os<< ptr[i] << " ";
+}
+template< typename T>
+void ArrayT<T>::input(std::istream& is)
+{
+	for(int i=0; i< size;++i)
+		is >> ptr[i];
+}
+
 
 
 #endif //ARRAYT_H

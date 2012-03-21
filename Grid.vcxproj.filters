@@ -45,6 +45,9 @@
     <ClInclude Include="ArrayT.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArrayTHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ArrayT.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArrayTHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
