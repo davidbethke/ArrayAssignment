@@ -24,6 +24,7 @@ Grid::Grid(const Grid &other)
 }
 Grid& Grid::operator=(const Grid &other)
 {
+
 	if(this != &other)// dont check nRows and nCols, start from scratch
 	{
 		delete [] myGrid;			// de alloc old mem

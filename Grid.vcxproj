@@ -89,6 +89,7 @@
     <ClInclude Include="ArrayTHelper.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="GridHelper.h" />
+    <ClInclude Include="GridT.h" />
     <ClInclude Include="GridTest.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClInclude>
@@ -105,6 +106,7 @@
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="GridApp.cpp" />
     <ClCompile Include="GridHelper.cpp" />
+    <ClCompile Include="GridT.cpp" />
     <ClCompile Include="GridTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
