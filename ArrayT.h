@@ -5,18 +5,18 @@
 #include <cstdlib>
 // Portions gratuitously copied from Array.h, Array.cpp
 
-template <typename T>
+template< typename T>
 class ArrayT
 {
 public:
 	ArrayT(void);
-	Array(int, T initValue=0);
-	Array(const Array &)
+	ArrayT(int, T initValue=T());   // default value calls default constructor of type T
+	ArrayT(const ArrayT<T> &);
 	~ArrayT(void);
 	int getSize() const;
-	const Array& operator=(const Array&);
-	bool operator==(const Array & ) const;
-	bool operator!=(const Array& ) const;
+	const ArrayT& operator=(const ArrayT<T>&);
+	bool operator==(const ArrayT<T> & ) const;
+	bool operator!=(const ArrayT<T>& ) const;
 	T& operator[](int);
 	T operator[](int) const;
 	void print() const;
@@ -26,68 +26,85 @@ private:
 	T  *ptr;
 	
 };
-template<typename T>
-Array<T>::Array():ptr(NULL),size(0)
+template< typename T>
+ArrayT<T>::ArrayT():ptr(NULL),size(0)
 {
 }
-template <typename T>
-Array<T>:Array(int arraySize, T initValue)
+
+template< typename T>
+ArrayT<T>::ArrayT(int arraySize, T initValue)
 {
- // validate arraySize //copied from Array.cpp
-   if ( arraySize > 0 )
-	  size = arraySize;
-   else 
-	  throw invalid_argument( "Array size must be greater than 0" );
+	if (arraySize >0)
+		size=arraySize;
+	else
+		throw invalid_argument("Array size must be greater than 0");
+	ptr = new T[size];
 
-   ptr = new T[ size ]; // create space for pointer-based array, type T
-
-   for ( int i = 0; i < size; ++i )
-	  ptr[ i ] = initValue; // set pointer-based array element
+	for (int i=0; i < size, ++i)
+		ptr[i]=initValue;
 }
 // copy constructor for class Array;
 // must receive a reference to prevent infinite recursion
-template <typename T>
-Array<T>::Array( const Array<T> &arrayToCopy ) 
-   : size( arrayToCopy.size )
+template< typename T>
+ArrayT<T>::ArrayT( const ArrayT<T> &arrayToCopy ): size( arrayToCopy.size )
 {
    ptr = new T[ size ]; // create space for pointer-based array, type T
 
    for ( int i = 0; i < size; ++i )
 	  ptr[ i ] = arrayToCopy.ptr[ i ]; // copy into object
 } // end Array copy constructor
-template <typename T>
-Array<T>::~Array()
+
+template< typename T>
+ArrayT<T>::~ArrayT()
 {
    delete [] ptr; // release pointer-based array space
 } // end destructor
 // return number of elements of Array
-template <typename T>
-int Array<T>::getSize() const
+
+template< typename T>
+int ArrayT<T>::getSize() const
 {
    return size; // number of elements in Array
 } // end function getSize
 
 // overloaded assignment operator;
 // const return avoids: ( a1 = a2 ) = a3
-template <typename T>
-const Array<T> &Array::operator=( const Array<T> &right )
+
+template< typename T>
+const ArrayT<T> & ArrayT<T>::operator=(const Array<T> & right)
 {
-   if ( &right != this ) // avoid self-assignment
-   {
-	  // for Arrays of different sizes, deallocate original
-	  // left-side array, then allocate new left-side array
-	  if ( size != right.size )
-	  {
-		 delete [] ptr; // release space
-		 size = right.size; // resize this object
-		 ptr = new T[ size ]; // create space for array copy, type T
-	  } // end inner if
+	if(&right !=this)  //self assign
+	{
+		if(size !=right.size)
+		{
+			delete [] ptr;
+			size=right.size;
+			ptr= new T[size];
+		}
+		for ( int i=0; i< size; ==i)
+			ptr[i]=right.ptr[i];
 
-	  for ( int i = 0; i < size; ++i )
-		 ptr[ i ] = right.ptr[ i ]; // copy array into object
-   } // end outer if
+	}
+	return *this;
+}
 
-   return *this; // enables x = y = z, for example
-} // end function operator=
+template< typename T>
+bool ArrayT<T>::operator==(const Array<T> & right) const
+{
+	if(size !=right.size)
+		return false;
+	for(int i=0; i< size; ++i)
+		if(ptr[i] != right.ptr[i]
+		return false;
+	return true;
+}
+template< typename T>
+T& ArrayT<T>::operator[](int subscript)
+{
+	if(subscript<0 || subscript >=size)
+		throw out_of_range("Subscript out of range");
+	return ptr[subscript];
+}
+}
 
 #endif //ARRAYT_H
